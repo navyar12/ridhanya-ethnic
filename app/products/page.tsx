@@ -4,7 +4,6 @@ import { sarees } from "@/data/sarees";
 import { useState } from "react";
 import { categories } from "@/data/categories";
 import { useRouter, useSearchParams } from "next/navigation";
-import {Product} from '@/app/types'
 
 export default function ProductsPage() {
   

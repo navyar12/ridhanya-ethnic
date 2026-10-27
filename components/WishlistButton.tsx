@@ -1,6 +1,6 @@
 "use client";
 
-import { Product } from "@/app/types";
+import { Product } from "@/app/types/product";
 
 export default function addToWishlist(product: Product) {
   const existing = JSON.parse(

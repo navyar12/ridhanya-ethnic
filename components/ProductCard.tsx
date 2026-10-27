@@ -1,18 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProductCard.module.css";
+import {Product} from '@/app/types/product'
 
-type Product = {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  category: string;
-  variants: {
-    color: string;
-    image: string;
-  }[];
-};
 
 export default function ProductCard({
   product,
@@ -53,7 +43,7 @@ export default function ProductCard({
         </h3>
 
         <p className="mt-1 text-sm text-gray-500">
-          {product.category}
+          {product.fabric}
         </p>
 
         <p className="mt-2 text-xl font-bold text-[#5B0D22]">
