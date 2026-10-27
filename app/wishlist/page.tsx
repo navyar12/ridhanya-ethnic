@@ -1,10 +1,4 @@
-"use client";
-
-import { useEffect } from "react";
-
 export default function Wishlist() {
-
-  const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
 
   return (
     <main className="min-h-screen bg-[#F8F4ED] px-6 py-10">
