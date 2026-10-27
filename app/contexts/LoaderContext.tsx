@@ -6,7 +6,7 @@ import {
   type ReactNode,
 } from "react";
 import { useRouter } from "next/navigation";
-import PageLoader from "@/components/PageLoader";
+import PageLoader from "@/src/components/PageLoader";
 
 export function LoaderProvider({ children }: { children: ReactNode }) {
   const router = useRouter();

@@ -1,9 +1,12 @@
 "use client";
-import ProductCard from "@/components/ProductCard";
-import { sarees } from "@/data/sarees";
-import { useState } from "react";
-import { categories } from "@/data/categories";
+
+import {useState, useEffect, useMemo} from "react"
+import ProductCard from "@/src/components/ProductCard";
+import { getProducts } from "@/src/services/productService";
+import { getCategories } from "@/src/services/categoryService";
 import { useRouter, useSearchParams } from "next/navigation";
+import {Product} from '@/src/types/product';
+import {Category} from '@/src/types/category';
 
 export default function ProductsPage() {
   
@@ -13,47 +16,64 @@ export default function ProductsPage() {
 
   const router = useRouter();
 
-  const filteredProducts = category
-    ? sarees.filter(
-        (product) => product.slug === category
-      )
-    : sarees;
+  const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
 
-  let products = category
-    ? sarees.filter(
-        (product) =>
-          product.slug === category
-      )
-    : [...sarees];
+  useEffect(() => {
+    const loadData = async () => {
+      const [productsData, categoriesData] =
+        await Promise.all([
+          getProducts(),
+          getCategories(),
+        ]);
 
-    if (sort === "priceAsc") {
-      products.sort((a, b) => a.price - b.price);
+      setProducts(productsData);
+      setCategories(categoriesData);
+    };
+
+    loadData();
+  }, []);
+
+  const displayProducts = useMemo(() => {
+    let data = category
+      ? products.filter(
+          (product) => product.slug === category
+        )
+      : [...products];
+
+    switch (sort) {
+      case "priceAsc":
+        data.sort((a, b) => a.price - b.price);
+        break;
+
+      case "priceDesc":
+        data.sort((a, b) => b.price - a.price);
+        break;
+
+      case "nameAsc":
+        data.sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+        break;
+
+      case "nameDesc":
+        data.sort((a, b) =>
+          b.name.localeCompare(a.name)
+        );
+        break;
     }
 
-    if (sort === "priceDesc") {
-      products.sort((a, b) => b.price - a.price);
-    }
-
-    if (sort === "nameAsc") {
-      products.sort((a, b) =>
-        a.name.localeCompare(b.name)
-      );
-    }
-
-    if (sort === "nameDesc") {
-      products.sort((a, b) =>
-        b.name.localeCompare(a.name)
-      );
-    }
+    return data;
+  }, [products, category, sort]);
 
   return (
-    <main className="min-h-screen bg-[#F8F4ED] px-6 py-10">
+    <main className="min-h-screen bg-[#F8F4ED] px-6 py-5 md:py-10">
       <div className="mx-auto max-w-7xl">
 
-        <div className="mt-8 mb-15 flex flex-wrap gap-3 justify-between">
-          <div className=" flex flex-wrap gap-3 justify-between">
+        <div className="md:mt-8 mt-4 md:mb-15 mb-5 flex flex-wrap gap-3 justify-between">
+          <div className=" flex flex-wrap gap-1 justify-between">
             <button onClick={() => router.push("/products")}
-              className={`rounded-full px-4 py-2 transition ${
+              className={`rounded-full px-4 py-2 transition text-[12px] ${
                 !category
                   ? "bg-[#6d0c22] text-white"
                   : "border border-[#D8B16D] bg-white text-[#6d0c22]"
@@ -64,7 +84,7 @@ export default function ProductsPage() {
                   onClick={() =>
                     router.push(`/products?category=${fabric.slug}`)
                   }
-                  className={`rounded-full px-4 py-2 transition ${
+                  className={`rounded-full px-4 py-2 transition text-[12px] ${
                     category === fabric.slug
                       ? "bg-[#6d0c22] text-white"
                       : "border border-[#D8B16D] bg-white text-[#6d0c22]"
@@ -89,7 +109,7 @@ export default function ProductsPage() {
 
                 router.push(`/products?${newParams.toString()}`);
               }}
-              className="rounded-lg border border-[#D8B16D] bg-white p-2 text-[#6d0c22]"
+              className="rounded-lg border border-[#D8B16D] bg-white p-2 text-[#6d0c22] text-[12px]"
             >
               <option value="">Sort By</option>
               <option value="priceAsc">Price: Low to High</option>
@@ -100,11 +120,11 @@ export default function ProductsPage() {
           </div>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-15">
-          {products.map((saree) => (
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 md:mt-15 mt-6">
+          {displayProducts.map((prod) => (
               <ProductCard
-                key={saree.id}
-                product={saree}
+                key={prod.id}
+                product={prod}
               />
             )) }
         </div>

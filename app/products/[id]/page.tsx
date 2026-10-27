@@ -1,49 +1,67 @@
+"use client";
+
 import Link from "next/link";
-import { sarees } from "@/data/sarees";
-import ProductGallery from "@/components/ProductGallery";
-import { ArrowLeftIcon } from "@heroicons/react/24/outline";
-import { ArrowLeft } from "lucide-react";
-import BrowserBackButton from '@/components/BrowserBack'
-//import {addToWishlist} from '@/components/WishlistButton'
+import { useEffect, useState } from "react";
+import { getProductById } from "@/src/services/productService";
+import ProductGallery from "@/src/components/ProductGallery";
+import BrowserBackButton from '@/src/components/BrowserBack'
+import { useParams } from "next/navigation";
+import { Product } from "@/src/types/product";
+import PageLoader from "@/src/components/PageLoader";
 
-export default async function ProductDetailsPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
+export default function ProductDetailsPage() {
+  const params = useParams();
 
-  const product = sarees.find(
-    (item) => item.id === Number(id)
-  );
+  const [product, setProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadProduct() {
+      try {
+        setLoading(true);
+        const data = await getProductById(params.id as string);
+        setProduct(data);
+      } catch (error) {
+        console.error(error);
+        setProduct(null);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProduct();
+  }, [params.id]);
+
+  
+  if (loading) {
+    return <PageLoader />;
+  }
 
   if (!product) {
-    return (
-      <div className="p-10">
-        Product not found
-      </div>
-    );
+    return <div className="p-10">Product not found</div>;
   }
 
   return (
     <main className="min-h-screen bg-[#F8F4ED] px-6 py-10">
       <div className="mx-auto grid max-w-6xl gap-10 rounded-2xl bg-white p-8 shadow md:grid-cols-2">
 
+          <Link
+            href="/products"
+            className="text-sm text-gray-500 md:hidden" > 
+            <BrowserBackButton/>
+          </Link>
+
         <ProductGallery variants={product.variants} />
 
         <div>
           <Link
             href="/products"
-            className="text-sm text-gray-500" > 
-            {/* <ArrowLeftIcon className="h-5 w-5" />
-              Back to Products
-            <ArrowLeft size={20} />
-              Back to Products */}
+            className="text-sm text-gray-500 hidden md:block" > 
             <BrowserBackButton/>
           </Link>
 
 
-          <h1 className="mt-4 text-5xl font-bold text-[#5B0D22]">
+          <h1 className="mt-4 text-4xl md:text-5xl font-bold text-[#5B0D22]">
             {product.name}
           </h1>
 
@@ -58,26 +76,19 @@ export default async function ProductDetailsPage({
           </ul>
 
           <div className="flex mt-6 gap-5">
-              <Link href="https://instagram.com/ridhanya.ethnic" target="_blank" rel="noopener noreferrer" 
+              {/* <Link href="https://instagram.com/ridhanya.ethnic" target="_blank" rel="noopener noreferrer" 
               className="rounded-2xl border border-[#E6D3B3] bg-white p-4 text-center shadow-sm transition hover:bg-[#d7d2bd]">
               Add to Wishlist
-              </Link>
-
-              {/* <button onClick={() => addToWishlist(product)}
-                className="rounded-full border px-4 py-2" > Add to Wishlist
-              </button> */}
+              </Link> */}
 
               <Link href="https://instagram.com/ridhanya.ethnic" target="_blank" rel="noopener noreferrer" 
-              className="rounded-2xl border border-[#E6D3B3] bg-white p-4 text-center shadow-sm transition hover:bg-[#d7d2bd]">
+              className="rounded-full border border-[#E6D3B3] py-4 px-6 text-center text-[#5B0D22] shadow-sm bg-[#D4A84F] transition hover:bg-[#d7d2bd]">
                 Order on Instagram
               </Link>
+
           </div>
 
         </div>
-
-    
-
-
 
       </div>
     </main>
