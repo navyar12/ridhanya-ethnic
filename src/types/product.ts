@@ -1,15 +1,28 @@
 export interface Product {
   id: string;
+  active: true;
   name: string;
-  price: number;
-  fabric: string;
   slug: string;
-  blouse: string;
   description: string;
+  price: number;
+  compareAtPrice: number;
+  fabric: string;
+  collection: string;
+  category: string;
+  occasion: string[];
+  blouse: string;
   washCare: string;
-  variantCount: number;
   variants: {
     color: string;
-    image: string;
+    slug: string;
+    sku: string;
+    stock: number;
+    images: string[];
+    displayOrder: number;
+    active: boolean;
   }[];
+  featured: boolean;
+  displayOrder: number;
+  createdAt: string;
+  updatedAt: string;
 }

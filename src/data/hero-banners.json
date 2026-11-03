@@ -1,0 +1,38 @@
+[
+    {
+        "id": "hero-banner-welcome",
+        "active": true,
+        "buttonLink": "",
+        "buttonText": "",
+        "description": "",
+        "image": "https://res.cloudinary.com/wogf5ux1/image/upload/v1793627227/hero-banner-desk-welcome.jpg",
+        "mobImage": "https://res.cloudinary.com/wogf5ux1/image/upload/v1793627483/hero-banner-mob-welcome.jpg",
+        "subTitle": "",
+        "title": "Welcome to Ridhanya Ethnic",
+        "displayOrder": 1
+    },
+    {
+        "id": "hero-banner-semi-crepe",
+        "active": true,
+        "buttonLink": "",
+        "buttonText": "Explore Collection",
+        "description": "Premium Semi Crepe Sarees featuring traditional Gandaberunda zari weaving.",
+        "image": "https://res.cloudinary.com/wogf5ux1/image/upload/v1793625115/hero-banner-desktop-1.jpg",
+        "mobImage": "https://res.cloudinary.com/wogf5ux1/image/upload/v1793628219/hero-banner-mobile-1.jpg",
+        "subTitle": "Heritage Woven in Every Thread",
+        "title": "Gandaberunda Zari Collection",
+        "displayOrder": 2
+    },
+    {
+        "id": "hero-banner-gifts",
+        "active": true,
+        "buttonLink": "",
+        "buttonText": "",
+        "description": "",
+        "image": "https://res.cloudinary.com/wogf5ux1/image/upload/v1793626873/hero-banner-desktop-gift.jpg",
+        "mobImage": "https://res.cloudinary.com/wogf5ux1/image/upload/v1793617611/hero-banner-mob-free.jpg",
+        "subTitle": "",
+        "title": "",
+        "displayOrder": 3
+    }
+]

@@ -1,0 +1,116 @@
+// for product
+
+//category = Sarees, Kurthas, Jewellery
+//collection = Semi Crepe, Cotton, Viscose
+//fabric = actual fabric details
+{
+  "active": true,
+  "name": "Semi Crepe Gandaberunda Zari Buttas Saree",
+  "slug": "semi-crepe-gandaberunda-zari-buttas-saree",
+
+  "description": "...",
+
+  "price": 2699,
+  "compareAtPrice": 2999,
+
+  "fabric": "Premium Semi Crepe",
+ "collection": "semi-crepe",
+  "category": "Sarees",
+
+
+
+  "occasion": [
+    "Festive",
+    "Wedding",
+    "Traditional"
+  ],
+
+  "blouse": "Running Blouse Piece Included",
+
+  "washCare": "Dry Clean Recommended",
+
+  "variantCount": 3,
+
+  "variants": [
+    {
+      "color": "Burnt Orange",
+      "slug": "semi-crepe-gandaberunda-orange",
+      "sku": "SCGB-BO",
+      "stock": 5,
+
+      "images": [],
+
+      "displayOrder": 1,
+
+      "active": true
+    }
+  ],
+
+  "featured": true,
+
+  "displayOrder": 1,
+
+  "createdAt": "2026-11-02T17:00:00Z"
+}
+
+// for product variants
+{
+  "color": "Burnt Orange",
+  "slug": "semi-crepe-gandaberunda-orange",
+  "sku": "SCGB-BO",
+  "stock": 5,
+
+  "images": [],
+
+  "displayOrder": 1,
+
+  "active": true
+}
+
+// for category
+{
+  "active": true,
+  "title": "Semi Crepe",
+  "slug": "semi-crepe",
+  "fabricType": "semi-crepe",
+  "image": "https://res.cloudinary.com/...",
+  "tag": "New",
+  "displayOrder": 1
+}
+replace with
+{
+  "active": true,
+
+  "title": "Semi Crepe",
+
+  "slug": "semi-crepe",
+
+  "category": "sarees",
+
+  "description": "Soft and elegant semi crepe sarees",
+
+  "image": "...",
+
+  "tag": "New",
+
+  "displayOrder": 1
+}
+
+Recommended Firestore Collections
+categories
+    sarees
+    kurthas
+    jewellery
+
+collections
+    semi-crepe
+    viscose
+    cotton
+
+products
+    semi-crepe-gandaberunda
+
+products/{productId}/variants
+    orange
+    pink
+    blue

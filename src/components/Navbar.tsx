@@ -7,7 +7,8 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/products" },
+  { label: "Sarees", href: "/products" },
+  // { label: "Kurthas", href: "/kurthas" }
   // { label: "Wishlist", href: "/wishlist" }
 ];
 
@@ -35,7 +36,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[12px] text-[#5B0D22] transition hover:text-[#C49A4A]"
+              className="text-[16px] text-[#5B0D22] transition hover:text-[#C49A4A]"
             >
               {link.label}
             </Link>
@@ -70,7 +71,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block py-2 text-[12px] text-[#5B0D22] transition hover:text-[#C49A4A]"
+                    className="block py-2 text-[16px] text-[#5B0D22] transition hover:text-[#C49A4A]"
                   >
                     {link.label}
                   </Link>

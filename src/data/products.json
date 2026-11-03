@@ -1,0 +1,81 @@
+[
+    {
+        "id": "semi-mysore-crepe-saree-big-checks-borderless",
+        "active": true,
+        "name": "Semi Mysore Crepe Borderless Big Checks Saree",
+        "slug": "semi-mysore-crepe-saree-big-checks-borderless",
+        "description": "Semi Mysore Crepe Saree with big checks, borderless and running blouse. Perfect for festive occasions and weddings.",
+        "price": 2699,
+        "compareAtPrice": 2999,
+        "fabric": "Premium Semi Crepe",
+        "collection": "semi-mysore-crepe",
+        "category": "sarees",
+        "occasion": [
+            "Festive",
+            "Wedding",
+            "Traditional"
+        ],
+        "blouse": "Self running blouse included",
+        "washCare": "Dry Clean Recommended",
+        "variants": [
+            {
+                "color": "Coral Red",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-burnt-coral-red",
+                "sku": "SCBC-CR",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-CR.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Maroon",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-maroon",
+                "sku": "SCBC-M",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-M.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Royal Purple",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-royal-purple",
+                "sku": "SCBC-RP",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-RP.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Dusty Pink",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-dusty-pink",
+                "sku": "SCBC-DP",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-DP.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Pista Green",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-pista-green",
+                "sku": "SCBC-PG",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-PG.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Black",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-black",
+                "sku": "SCBC-B",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-B.jpg"],
+                "displayOrder": 1,
+                "active": true
+            }
+        ],
+        "featured": true,
+        "displayOrder": 2,
+        "createdAt": "2024-06-05T10:00:00Z",
+        "updatedAt": "2024-06-05T10:00:00Z"
+    }
+]

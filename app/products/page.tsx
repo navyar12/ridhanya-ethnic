@@ -1,43 +1,34 @@
 "use client";
 
-import {useState, useEffect, useMemo} from "react"
+import { useMemo } from "react";
 import ProductCard from "@/src/components/ProductCard";
-import { getProducts } from "@/src/services/productService";
-import { getCategories } from "@/src/services/categoryService";
 import { useRouter, useSearchParams } from "next/navigation";
-import {Product} from '@/src/types/product';
-import {Category} from '@/src/types/category';
+import { useProducts } from "@/src/hooks/useProducts";
+import { useCategories } from "@/src/hooks/useCategories";
+import PageLoader from "@/src/components/PageLoader";
+import ErrorMessage from "@/src/components/ui/ErrorMessage";
 
 export default function ProductsPage() {
-  
   const params = useSearchParams();
-  const category = params.get("category");
+  const collection = params.get("category");
   const sort = params.get("sort");
 
   const router = useRouter();
-
-  const [products, setProducts] = useState<Product[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
-
-  useEffect(() => {
-    const loadData = async () => {
-      const [productsData, categoriesData] =
-        await Promise.all([
-          getProducts(),
-          getCategories(),
-        ]);
-
-      setProducts(productsData);
-      setCategories(categoriesData);
-    };
-
-    loadData();
-  }, []);
+  const {
+    data: products,
+    loading: productsLoading,
+    error: productsError,
+  } = useProducts();
+  const {
+    data: categories,
+    loading: categoriesLoading,
+    error: categoriesError,
+  } = useCategories();
 
   const displayProducts = useMemo(() => {
-    let data = category
+    const data = collection
       ? products.filter(
-          (product) => product.slug === category
+          (product) => product.collection === collection
         )
       : [...products];
 
@@ -64,7 +55,21 @@ export default function ProductsPage() {
     }
 
     return data;
-  }, [products, category, sort]);
+  }, [products, collection, sort]);
+
+  if (productsLoading || categoriesLoading) {
+    return <PageLoader />;
+  }
+
+  if (productsError || categoriesError) {
+    return (
+      <main className="min-h-screen bg-[#F8F4ED] px-6 py-10">
+        <div className="mx-auto max-w-7xl">
+          <ErrorMessage message="Unable to load products. Please try again later." />
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-[#F8F4ED] px-6 py-5 md:py-10">
@@ -72,20 +77,20 @@ export default function ProductsPage() {
 
         <div className="md:mt-8 mt-4 md:mb-15 mb-5 flex flex-wrap gap-3 justify-between">
           <div className=" flex flex-wrap gap-1 justify-between">
-            <button onClick={() => router.push("/products")}
+            {categories.length > 0 && <button onClick={() => router.push("/products")}
               className={`rounded-full px-4 py-2 transition text-[12px] ${
-                !category
+                !collection
                   ? "bg-[#6d0c22] text-white"
                   : "border border-[#D8B16D] bg-white text-[#6d0c22]"
-              }`} >All</button>
+              }`} >All</button>}
               {categories.map((fabric) => (
                 <button
                   key={fabric.fabricType}
                   onClick={() =>
-                    router.push(`/products?category=${fabric.slug}`)
+                    router.push(`/products?collection=${fabric.slug}`)
                   }
                   className={`rounded-full px-4 py-2 transition text-[12px] ${
-                    category === fabric.slug
+                    collection === fabric.slug
                       ? "bg-[#6d0c22] text-white"
                       : "border border-[#D8B16D] bg-white text-[#6d0c22]"
                   }`}

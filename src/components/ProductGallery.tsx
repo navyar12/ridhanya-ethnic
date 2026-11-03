@@ -2,21 +2,36 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import {Variant} from '@/src/types/variant'
+import {Variant} from '@/src/types/variant';
+import { PRODUCT_PLACEHOLDER } from "@/src/constants/images";
 
 export default function ProductGallery({
   variants,
+  selectedColor
 }: {
   variants: Variant[];
+  selectedColor?: string;
 }) {
+
+  const selectedVariant =
+    variants.find(
+      (v) => v.color === selectedColor
+    ) || variants[0];
+
   const [selectedImage, setSelectedImage] = useState(
-    variants[0]?.image
+    selectedVariant.images?.[0] ||
+    PRODUCT_PLACEHOLDER
   );
 
-  const [selectedVariant, setSelectedVariant] =
-  useState(variants[0]);
+  useEffect(() => {
+    setSelectedImage(
+      selectedVariant.images?.[0] ||
+      PRODUCT_PLACEHOLDER
+    );
+  }, [selectedVariant]);
+
 
   return (
     <div>
@@ -31,43 +46,34 @@ export default function ProductGallery({
         />
       </div>
 
-      <div className="mt-4 flex items-center gap-2">
-        <span className="text-sm text-gray-500">
-          Color:
-        </span>
+      {/* Image Gallery for Selected Color */}
+      <div className="mt-4">
+        <p className="mb-2 text-sm text-gray-500">
+          More Views
+        </p>
 
-        <span className="rounded-full bg-[#F8F4ED] px-3 py-1 text-sm font-medium text-[#6d0c22] border border-[#E7D8BF]">
-          {selectedVariant.color}
-        </span>
-      </div>
+        <div className="flex gap-2">
+          {selectedVariant.images?.map((image, index) => (
+            <button
+              key={image}
+              onClick={() => setSelectedImage(image)}
+              className={`overflow-hidden rounded-lg border-2 ${
+                selectedImage === image
+                  ? "border-[#6d0c22]"
+                  : "border-[#E7D8BF]"
+              }`}
+            >
+              <Image
+                src={image}
+                alt={`${selectedVariant.color}-${index}`}
+                width={60}
+                height={90}
+                className="h-20 w-14 object-cover"
+              />
 
-      {/* Thumbnails */}
-      <div className="mt-4 flex flex-wrap gap-3">
-        {variants.map((variant) => (
-          <button
-            key={variant.color}
-            title={variant.color}
-            onClick={() => {
-              setSelectedVariant(variant);
-              setSelectedImage(variant.image);
-            }}
-            className={`overflow-hidden rounded-xl border-2 transition
-              ${
-                selectedVariant.color === variant.color
-                  ? "border-[#6d0c22] ring-2 ring-[#6d0c22]/30"
-                  : "border-[#E7D8BF] hover:border-[#6d0c22]"
-              }
-            `}
-          >
-            <Image
-              src={variant.image}
-              alt={variant.color}
-              width={80}
-              height={120}
-              className="h-24 w-16 object-cover"
-            />
-          </button>
-        ))}
+            </button>
+          ))}
+        </div>
       </div>
 
     </div>
