@@ -26,10 +26,10 @@ export default function HeroCarousel() {
         navigation={true} // show navigation arrows
         pagination={{ clickable: true }} // show pagination dots
         loop={true}
-        // autoplay={{
-        //   delay: 3000, // speed between slides
-        //   pauseOnMouseEnter: true, // stops on hover // Mouse leaves // Rotation restarts
-        // }}
+        autoplay={{
+          delay: 3000, // speed between slides
+          pauseOnMouseEnter: true, // stops on hover // Mouse leaves // Rotation restarts
+        }}
         speed={700} // transition animation speed // 300 = fast // 800 = smooth // 1500 = slow
         className="overflow-hidden"
       >

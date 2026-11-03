@@ -33,7 +33,7 @@ export default function ProductCard({
           {product.name}
         </h3>
 
-        <p className="mt-2 text-xl font-bold text-[#5B0D22]">
+        <p className="mt-2 text-md font-bold text-[#5B0D22]">
           ₹{product.price}
         </p>
 
