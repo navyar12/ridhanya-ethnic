@@ -24,3 +24,8 @@ console.log({
 const app = initializeApp(firebaseConfig);
 //const analytics = getAnalytics(app);
 export const db = getFirestore(app);
+
+console.log(
+  "Project ID:",
+  process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID
+);
