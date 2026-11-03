@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProductCard.module.css";
-import {Product} from '@/src/types/product'
+import {Product} from '@/src/types/product';
+import { PRODUCT_PLACEHOLDER } from "@/src/constants/images";
 
 export default function ProductCard({
   product,
@@ -11,8 +12,8 @@ export default function ProductCard({
   return (
     <div className={`${styles.card} overflow-hidden rounded-2xl border border-[#E7D8BF] bg-white shadow-sm transition hover:shadow-lg`}>
       <div className="relative h-80 w-full">
-        <Image
-          src={product.variants[0].image}
+       <Image
+          src={product.variants?.[0]?.images?.[0] || PRODUCT_PLACEHOLDER}
           alt={product.name}
           fill
           className="object-cover"
@@ -32,16 +33,12 @@ export default function ProductCard({
           {product.name}
         </h3>
 
-        <p className="mt-1 text-sm text-gray-500">
-          {product.fabric}
-        </p>
-
         <p className="mt-2 text-xl font-bold text-[#5B0D22]">
           ₹{product.price}
         </p>
 
         <Link
-          href={`/products/${product.id}`}
+          href={`/products/${product.id}?color=${product.variants[0]?.color}`}
           className="mt-4 block rounded-full border border-[#B08A4A] py-2 text-center text-[#5B0D22] transition hover:bg-[#5B0D22] hover:text-white"
         >
           View Details

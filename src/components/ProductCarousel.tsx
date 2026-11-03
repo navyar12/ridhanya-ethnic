@@ -15,7 +15,7 @@ export default function ProductCarousel({
       {variants.map((variant) => (
         <SwiperSlide key={variant.color}>
           <img
-            src={variant.image}
+            src={variant.images?.[0] || "/placeholder.png"}
             alt={variant.color}
             className="w-full rounded-xl"
           />

@@ -1,6 +1,5 @@
 "use client";
 
-import {useState, useEffect} from "react"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
@@ -9,26 +8,15 @@ import "../../app/global.css"
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import {getBanners} from "@/src/services/bannerService";
-import {Banner} from "@/src/types/banner";
+import { useBanners } from "@/src/hooks/useBanners";
+import ErrorMessage from "@/src/components/ui/ErrorMessage";
 
 export default function HeroCarousel() {
+  const { data: banners, error } = useBanners();
 
-  const [banners, setBanners] = useState<Banner[]>([]);
-
-  useEffect(() => {
-    const loadBanners = async () => {
-      const bannersData = await getBanners();
-
-      const activeBanners = bannersData
-        .filter((banner) => banner.active)
-        .sort((a, b) => a.displayOrder - b.displayOrder);
-
-      setBanners(activeBanners);
-    };
-
-    loadBanners();
-  }, []);
+  if (error) {
+    return <ErrorMessage message="Unable to load featured collections. Please try again later." />;
+  }
 
   return (
     // aspect-[16/6] for 16:6 ratio or aspect-[21/7] for 21:7 ratio, you can adjust the ratio as needed
@@ -39,7 +27,7 @@ export default function HeroCarousel() {
         pagination={{ clickable: true }} // show pagination dots
         loop={true}
         // autoplay={{
-        //   delay: 5000, // speed between slides
+        //   delay: 3000, // speed between slides
         //   pauseOnMouseEnter: true, // stops on hover // Mouse leaves // Rotation restarts
         // }}
         speed={700} // transition animation speed // 300 = fast // 800 = smooth // 1500 = slow
@@ -48,7 +36,7 @@ export default function HeroCarousel() {
 
         {banners.map((banner, index) => (
           <SwiperSlide key={index}>
-            <div className="relative h-[500px] lg:h-[600px] xl:h-[700px] overflow-hidden md:rounded-xl md:hidden">
+            <div className="relative h-[750px] lg:h-[750px] xl:h-[750px] overflow-hidden md:rounded-xl md:hidden">
               <Image
                 src={banner.mobImage}
                 alt={banner.title}
@@ -57,13 +45,13 @@ export default function HeroCarousel() {
               />
               <div className="absolute inset-0 overflow-hidden md:rounded-xl" />
 
-              <div className="absolute left-5 top-6 max-w-xl">
+              <div className="absolute left-5 top-20 max-w-xl">
 
-                <p className={`mb-3 text-xs uppercase tracking-[0.25em] 5B0D22`}>
+                <p className={`mb-3 text-sm uppercase tracking-[0.25em] 5B0D22`}>
                   {banner.subTitle}
                 </p>
 
-                <h2 className={`mb-2 text-2xl font-serif font-bold leading-tight text-[#5B0D22] md:text-6xl`}>
+                <h2 className={`mb-2 text-3xl font-serif font-bold leading-tight text-[#5B0D22] md:text-6xl`}>
                   {banner.title}
                 </h2>
 
@@ -71,14 +59,16 @@ export default function HeroCarousel() {
                   {banner.description}
                 </p>
 
-                <Link
+              </div>
+               <div className="absolute left-5 bottom-25 max-w-xl">
+                  {banner.buttonText && banner.buttonLink && <Link
                     href={banner.buttonLink}
                     className="rounded-full bg-[#6A1124] px-8 py-4 font-medium text-white transition hover:bg-[#55101e]"
                   >{banner.buttonText}
-                </Link>
+                </Link>}
               </div>
             </div>
-            <div className="relative h-[500px] lg:h-[600px] xl:h-[700px] overflow-hidden rounded-xl hidden md:block">
+            <div className="relative h-[650px] lg:h-[650px] xl:h-[650px] overflow-hidden rounded-xl hidden md:block">
               <Image
                 src={banner.image}
                 alt={banner.title}
@@ -89,7 +79,7 @@ export default function HeroCarousel() {
 
               <div className="absolute left-20 top-1/2 -translate-y-1/2 max-w-xl">
 
-                <p className={`mb-3 text-sm uppercase tracking-[0.25em] 5B0D22`}>
+                <p className={`mb-3 text-md uppercase tracking-[0.25em] 5B0D22`}>
                   {banner.subTitle}
                 </p>
 
@@ -101,11 +91,13 @@ export default function HeroCarousel() {
                   {banner.description}
                 </p>
 
+                {banner.buttonText && banner.buttonLink &&    
                 <Link
                     href={banner.buttonLink}
                     className="rounded-full bg-[#6A1124] px-8 py-4 font-medium text-white transition hover:bg-[#55101e]"
                   >{banner.buttonText}
                 </Link>
+                }
               </div>
             </div>
           </SwiperSlide>
