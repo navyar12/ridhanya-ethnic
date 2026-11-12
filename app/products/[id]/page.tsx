@@ -103,7 +103,7 @@ export default function ProductDetailsPage() {
 
   return (
     <main className="min-h-screen bg-[#F8F4ED] px-6 py-10 ">
-      <div className="mx-auto grid max-w-6xl">
+      <div className="mx-auto md:grid md:max-w-6xl">
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },
@@ -118,7 +118,7 @@ export default function ProductDetailsPage() {
           ]}
         />
 
-        <div className="mx-auto grid max-w-6xl gap-10 rounded-2xl bg-white p-4 md:p-8 shadow md:grid-cols-2">
+        <div className="mx-auto grid gap-10 rounded-2xl bg-white p-4 md:p-8 shadow md:grid-cols-2">
           <div>
             <Link
               href="/products"
@@ -130,7 +130,9 @@ export default function ProductDetailsPage() {
               variants={product.variants}
               selectedColor={selectedColor} />
 
-            <Tabs product={{ description: product.description, blouse: product.blouse, washCare: product.washCare, shippingReturns: product.shippingReturns }} />
+            <div className="hidden md:block" >
+              <Tabs product={{ description: product.description, blouse: product.blouse, washCare: product.washCare, shippingReturns: product.shippingReturns }} />
+            </div>
 
           </div>
 
@@ -194,6 +196,10 @@ export default function ProductDetailsPage() {
               <span className="text-md text-[#5B0D22] line-through">
                 {`Rs.${product.actualPrice.toFixed(2)}`}
               </span>
+            </div>
+
+            <div className="md:hidden" >
+              <Tabs product={{ description: product.description, blouse: product.blouse, washCare: product.washCare, shippingReturns: product.shippingReturns }} />
             </div>
 
             <div className="flex mt-6 gap-5">
