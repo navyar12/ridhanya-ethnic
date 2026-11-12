@@ -20,7 +20,7 @@ export default function CategoryRow() {
             key={item.title}
             className="bg-[#F8F4ED] rounded-2xl rounded-t-[999px] rounded-b-[999px] border border-[#E7D8BF] shadow-sm hover:shadow-lg transition overflow-hidden"
           >
-            <div className="py-1 md:py-4 text-center">
+            <div className="py-1 md:py-4 text-center flex h-12 items-center justify-center rounded-full border border-[#E7D8BF]">
               <Link href={`/products?collection=${item.slug}`}>
                 <h3 className="text-md font-serif text-[#2D1B1B]">
                   {item.title}
