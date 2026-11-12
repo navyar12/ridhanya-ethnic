@@ -57,7 +57,7 @@ export default function ProductGallery({
             <button
               key={image}
               onClick={() => setSelectedImage(image)}
-              className={`overflow-hidden rounded-lg border-2 ${
+              className={`overflow-hidden rounded-lg border-2 cursor-pointer ${
                 selectedImage === image
                   ? "border-[#6d0c22]"
                   : "border-[#E7D8BF]"

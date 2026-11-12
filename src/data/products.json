@@ -1,74 +1,57 @@
 [
     {
-        "id": "semi-mysore-crepe-saree-big-checks-borderless",
+        "id": "semi-mysore-crepe-saree-gandaberunda-border",
         "active": true,
-        "name": "Semi Mysore Crepe Borderless Big Checks Saree",
-        "slug": "semi-mysore-crepe-saree-big-checks-borderless",
-        "description": "Semi Mysore Crepe Saree with big checks, borderless and running blouse. Perfect for festive occasions and weddings.",
-        "price": 2699,
-        "compareAtPrice": 2999,
+        "name": "Semi Mysore Crepe Gandaberunda Border Saree",
+        "slug": "semi-mysore-crepe-saree-gandaberunda-border",
+        "description": "Premium Semi Mysore Crepe Saree with Gandaberunda Border, zari buttas and running blouse with small zari buttas. Perfect for festive occasions and weddings.",
+        "price": 1699,
+        "actualPrice": 1899,
+        "sellingPrice": 1699,
+        "discount" : "10%",
         "fabric": "Premium Semi Crepe",
         "collection": "semi-mysore-crepe",
         "category": "sarees",
+        "productCode": "RES001",
         "occasion": [
             "Festive",
             "Wedding",
             "Traditional"
         ],
-        "blouse": "Self running blouse included",
-        "washCare": "Dry Clean Recommended",
+        "blouse": "Self color running blouse with small zari buttas included",
+        "washCare": [
+            "Dry clean only",
+            "Do not bleach",
+            "Iron on low heat",
+            "Store in a cool, dry place"
+        ],
+        "shipping":"Shipping Excluded",
         "variants": [
             {
-                "color": "Coral Red",
-                "slug": "semi-mysore-crepe-saree-big-checks-borderless-burnt-coral-red",
-                "sku": "SCBC-CR",
+                "color": "Burnt Orange",
+                "slug": "semi-mysore-crepe-saree-gandaberunda-border-burnt-orange",
+                "sku": "SCSGB-BO",
                 "stock": 1,
-                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-CR.jpg"],
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCSGB-BO.jpg",
+                           "https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCSGB-BO-draped.jpg"],
                 "displayOrder": 1,
                 "active": true
             },
             {
-                "color": "Maroon",
-                "slug": "semi-mysore-crepe-saree-big-checks-borderless-maroon",
-                "sku": "SCBC-M",
+                "color": "Sea Green",
+                "slug": "semi-mysore-crepe-saree-gandaberunda-border-sea-green",
+                "sku": "SCSGB-SG",
                 "stock": 1,
-                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-M.jpg"],
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCSGB-SB.jpg"],
                 "displayOrder": 1,
                 "active": true
             },
             {
-                "color": "Royal Purple",
-                "slug": "semi-mysore-crepe-saree-big-checks-borderless-royal-purple",
-                "sku": "SCBC-RP",
+                "color": "Rani Pink",
+                "slug": "semi-mysore-crepe-saree-gandaberunda-border-rani-pink",
+                "sku": "SCSGB-RP",
                 "stock": 1,
-                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-RP.jpg"],
-                "displayOrder": 1,
-                "active": true
-            },
-            {
-                "color": "Dusty Pink",
-                "slug": "semi-mysore-crepe-saree-big-checks-borderless-dusty-pink",
-                "sku": "SCBC-DP",
-                "stock": 1,
-                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-DP.jpg"],
-                "displayOrder": 1,
-                "active": true
-            },
-            {
-                "color": "Pista Green",
-                "slug": "semi-mysore-crepe-saree-big-checks-borderless-pista-green",
-                "sku": "SCBC-PG",
-                "stock": 1,
-                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-PG.jpg"],
-                "displayOrder": 1,
-                "active": true
-            },
-            {
-                "color": "Black",
-                "slug": "semi-mysore-crepe-saree-big-checks-borderless-black",
-                "sku": "SCBC-B",
-                "stock": 1,
-                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCBC-B.jpg"],
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCSGB-RP.jpg"],
                 "displayOrder": 1,
                 "active": true
             }
@@ -76,6 +59,226 @@
         "featured": true,
         "displayOrder": 2,
         "createdAt": "2024-06-05T10:00:00Z",
-        "updatedAt": "2024-06-05T10:00:00Z"
+        "updatedAt": "2024-06-05T10:00:00Z",
+        "shippingReturns": [
+            "Free shipping across India",
+            "Orders are dispatched within 1-3 business days",
+            "Delivery typically takes 3-7 business days depending on location",
+            "Product colors may vary slightly due to screen settings and lighting",
+            "Returns are accepted only for damaged or incorrect products",
+            "Any issues must be reported within 24 hours of delivery with photos and unboxing video"
+        ]
+    },
+    {
+        "id": "semi-mysore-crepe-saree-big-checks-borderless",
+        "active": true,
+        "name": "Semi Mysore Crepe Silk Saree with Grand Zari Checks & Striped Chit Pallu",
+        "slug": "semi-mysore-crepe-saree-big-checks-borderless",
+        "description": "Elegant Semi Crepe Silk Saree featuring bold gold zari checks across the body and a beautifully woven striped chit pallu. The soft crepe texture offers a graceful drape, while the subtle zari detailing adds timeless charm. Paired with a matching running blouse, this saree is perfect for festive occasions, office wear, and elegant gatherings.",
+        "price": 1199,
+        "actualPrice": 1399,
+        "sellingPrice": 1199,
+        "discount" : "10%",
+        "fabric": "Premium Semi Crepe",
+        "collection": "semi-mysore-crepe",
+        "category": "sarees",
+        "productCode": "RES002",
+        "occasion": [
+            "Festive",
+            "Wedding",
+            "Traditional"
+        ],
+        "shipping":"Shipping Excluded",
+        "blouse": "Self running blouse included",
+        "washCare": [
+            "Dry clean only",
+            "Do not bleach",
+            "Iron on low heat",
+            "Store in a cool, dry place"
+        ],
+        "variants": [
+            {
+                "color": "Ruby Red",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-burnt-ruby-red",
+                "sku": "SCMS-Checks-RR",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCMS-Checks-Red.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Wine Maroon",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-wine-maroon",
+                "sku": "SCMS-Checks-WM",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCMS-Checks-Marron.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Royal Violet",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-royal-violet",
+                "sku": "SCMS-Checks-RV",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCMS-Checks-Purple.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Dusty Rose Pink",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-dusty-rose-pink",
+                "sku": "SCMS-Checks-DRP",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCMS-Checks-Pink.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Pista Green",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-pista-green",
+                "sku": "SCMS-Checks-PG",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCMS-Checks-Green.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Black",
+                "slug": "semi-mysore-crepe-saree-big-checks-borderless-black",
+                "sku": "SCMS-Checks-B",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/SCMS-Checks-Black.jpg"],
+                "displayOrder": 1,
+                "active": true
+            }
+        ],
+        "featured": true,
+        "displayOrder": 2,
+        "createdAt": "2024-06-05T10:00:00Z",
+        "updatedAt": "2024-06-05T10:00:00Z",
+        "shippingReturns": [
+            "Free shipping across India",
+            "Orders are dispatched within 1-3 business days",
+            "Delivery typically takes 3-7 business days depending on location",
+            "Product colors may vary slightly due to screen settings and lighting",
+            "Returns are accepted only for damaged or incorrect products",
+            "Any issues must be reported within 24 hours of delivery with photos and unboxing video"
+        ]
+    },
+    {
+        "id": "banarasi-khaddi-georgette-chiffon-saree-rich-antique-gold-zari",
+        "active": true,
+        "name": "Banarasi Khaddi Georgette Chiffon Saree with Rich Antique Gold Zari",
+        "slug": "banarasi-khaddi-georgette-chiffon-saree-rich-antique-gold-zari",
+        "description": "Drape yourself in effortless elegance with this exquisite Banarasi Khaddi Georgette Chiffon Saree. The rich wine-red body is beautifully adorned with delicate zari buttas scattered across the saree, creating a subtle shimmer with every movement. The contrasting dark-toned Banarasi pallu and border showcase intricate woven zari patterns, adding depth and regal charm. Lightweight, flowy, and graceful, this saree combines the luxurious appeal of Banarasi weaving with the comfort of georgette chiffon, making it perfect for weddings, festive celebrations, poojas, and special occasions.",
+        "price": 1799,
+        "actualPrice": 1999,
+        "sellingPrice": 1799,
+        "discount" : "10%",
+        "fabric": "Premium Banarasi Khaddi Georgette",
+        "collection": "banarasi-khaddi-georgette-chiffon",
+        "category": "sarees",
+        "productCode": "RES003",
+        "shipping":"Shipping Excluded",
+        "occasion": [
+            "Festive",
+            "Wedding",
+            "Traditional"
+        ],
+        "blouse": "Contrast small butta blouse included",
+        "washCare": [
+            "Dry clean only",
+            "Do not bleach",
+            "Iron on low heat",
+            "Store in a cool, dry place"
+        ],
+        "variants": [
+            {
+                "color": "Ruby Red",
+                "slug": "banarasi-khaddi-georgette-chiffon-saree-rich-antique-gold-zari-ruby-red",
+                "sku": "BKGC-WR",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/BKGS-WR-Drapped.jpg",
+                           "https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/BKGS-WR-Open.jpg",
+                           "https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/BKGS-WR.jpg"],
+                "displayOrder": 1,
+                "active": true
+            },
+            {
+                "color": "Wine Maroon",
+                "slug": "banarasi-khaddi-georgette-chiffon-saree-rich-antique-gold-zari-wine-maroon",
+                "sku": "BKGC-LRP",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/BKGS-LRP-Drapped.jpg",
+                           "https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/BKGS-LRP-Open.jpg",
+                           "https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/BKGS-LPR.jpg"],
+                "displayOrder": 1,
+                "active": true
+            }
+        ],
+        "featured": true,
+        "displayOrder": 3,
+        "createdAt": "2024-06-05T10:00:00Z",
+        "updatedAt": "2024-06-05T10:00:00Z",
+        "shippingReturns": [
+            "Free shipping across India",
+            "Orders are dispatched within 1-3 business days",
+            "Delivery typically takes 3-7 business days depending on location",
+            "Product colors may vary slightly due to screen settings and lighting",
+            "Returns are accepted only for damaged or incorrect products",
+            "Any issues must be reported within 24 hours of delivery with photos and unboxing video"
+        ]
+    },
+    {
+        "id": "ilkal-tam-tam-checks-saree",
+        "active": true,
+        "name": "Ilkal Tam Tam Checks Saree",
+        "slug": "ilkal-tam-tam-checks-saree",
+        "description": "Handwoven Ilkal Tam Tam Saree with Rich Zari Border and Contrast Magenta Pallu. Celebrate Karnataka's timeless weaving heritage with this elegant Ilkal Tam Tam Saree. Featuring the iconic pink-and-white Tam Tam checks body, paired with a vibrant magenta pallu and traditional zari border, this saree beautifully blends cultural craftsmanship with everyday grace.",
+        "price": 1499,
+        "actualPrice": 1699,
+        "sellingPrice": 1499,
+        "discount" : "10%",
+        "fabric": "Ilkal",
+        "collection": "ilkal",
+        "category": "sarees",
+        "productCode": "RES004",
+        "occasion": [
+            "Festive",
+            "Wedding",
+            "Traditional"
+        ],
+        "shipping":"Shipping Excluded",
+        "blouse": "Contrast plain blouse with running border included",
+        "washCare": [
+            "Dry clean only",
+            "Do not bleach",
+            "Iron on low heat",
+            "Store in a cool, dry place"
+        ],
+        "variants": [
+            {
+                "color": "Raspberry Pink Magenta",
+                "slug": "ilkal-tam-tam-checks-saree-raspberry-pink-magenta",
+                "sku": "ilKAL-Tam-RPM",
+                "stock": 1,
+                "images": ["https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/IlKAL-Tam.jpg",
+                           "https://res.cloudinary.com/wogf5ux1/image/upload/v1793702300/IlKAL-Tam-Open.jpg"],
+                "displayOrder": 4,
+                "active": true
+            }
+        ],
+        "featured": true,
+        "displayOrder": 2,
+        "createdAt": "2024-06-05T10:00:00Z",
+        "updatedAt": "2024-06-05T10:00:00Z",
+        "shippingReturns": [
+            "Free shipping across India",
+            "Orders are dispatched within 1-3 business days",
+            "Delivery typically takes 3-7 business days depending on location",
+            "Product colors may vary slightly due to screen settings and lighting",
+            "Returns are accepted only for damaged or incorrect products",
+            "Any issues must be reported within 24 hours of delivery with photos and unboxing video"
+        ]
     }
 ]

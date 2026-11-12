@@ -5,13 +5,12 @@ export interface Product {
   slug: string;
   description: string;
   price: number;
-  compareAtPrice: number;
   fabric: string;
   collection: string;
   category: string;
   occasion: string[];
   blouse: string;
-  washCare: string;
+  washCare: Array<string>;
   variants: {
     color: string;
     slug: string;
@@ -25,4 +24,10 @@ export interface Product {
   displayOrder: number;
   createdAt: string;
   updatedAt: string;
+  shippingReturns: string[];
+  shipping: string;
+  productCode: string;
+  actualPrice: number;
+  sellingPrice: number;
+  discount: string;
 }
