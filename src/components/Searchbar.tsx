@@ -138,7 +138,7 @@ export default function Searchbar({
             //onClick={() => dispatch(toggleSearch())}
             className="hidden md:block rounded-full p-2 hover:bg-gray-100"
         >
-            <Search size={20} />
+            <Search className="text-[#000000]" size={20} />
         </button>
 
         <button
@@ -162,7 +162,7 @@ export default function Searchbar({
             onChange={(e) => setSearch(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             placeholder="Search by name or code..."
-            className="h-10 w-full border-b outline-0 px-4 pl-8 text-sm placeholder:text-sm placeholder:text-[#000]"
+            className="h-10 w-full border-b outline-0 px-4 pl-8 text-sm placeholder:text-sm placeholder:text-[#000000]"
             />
         </div>
         </div>

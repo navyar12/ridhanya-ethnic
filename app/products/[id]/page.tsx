@@ -146,7 +146,7 @@ export default function ProductDetailsPage() {
               {product.name}
             </h1>
 
-            <h6 className="italic">{product.productCode}</h6>
+            <h6 className="italic text-[#000000]">{product.productCode}</h6>
 
             <div className="mt-6">
               <span className="text-sm text-gray-500">
@@ -217,7 +217,7 @@ export default function ProductDetailsPage() {
         </div>
 
         <section className="mt-12">
-          {recentlyViewed.length >1 && <h2 className="text-xl font-semibold mb-4">
+          {recentlyViewed.length > 0 && <h2 className="text-xl font-semibold mb-4 text-[#000000]">
             Recently Viewed
           </h2>}
 
