@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#F8F4EE]">
       <div className="grid grid-cols-1 gap-4 md:flex md:justify-between mx-auto max-w-6xl font-bold pt-6 px-5 pb-6">
-        <span>✓ Handmade accessories with every saree</span>
-        <span>✓ Secure shipping across India</span>
-        <span>✓ Carefully selected fabrics</span>
+        <span className="text-[#000000]">✓ Handmade accessories with every saree</span>
+        <span className="text-[#000000]">✓ Secure shipping across India</span>
+        <span className="text-[#000000]">✓ Carefully selected fabrics</span>
       </div>
       <section className="bg-[#5B0D22] py-6 text-center text-white md:flex justify-center gap-10">
         <div>

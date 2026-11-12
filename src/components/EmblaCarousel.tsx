@@ -41,7 +41,7 @@ return(
                 className="rounded-lg"
               />
 
-              <p className="mt-2 text-sm line-clamp-2 text-center">
+              <p className="mt-2 text-sm line-clamp-2 text-center text-[#000000]">
                 {item.name}
               </p>
 
