@@ -1,6 +1,6 @@
 
 import HeroCarousel from "@/src/components/HeroCarousel";
-import CategoryRow from "@/src/components/CatagoryRow";
+import CategoryRow from "@/src/components/CategoryRow";
 
 export default function Home() {
 
