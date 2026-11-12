@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#F8F4EE]">
-      <div className="flex justify-between mx-auto max-w-6xl font-bold pt-4 px-5 pb-8">
+      <div className="grid grid-cols-1 gap-4 md:flex md:justify-between mx-auto max-w-6xl font-bold pt-6 px-5 pb-6">
         <span>✓ Handmade accessories with every saree</span>
         <span>✓ Secure shipping across India</span>
         <span>✓ Carefully selected fabrics</span>
@@ -14,9 +14,7 @@ export default function Footer() {
             Loved a saree?
           </h3>
 
-
-
-          <p className=" text-white/80">
+          <p className=" text-white/80 px-10">
            Click "Order on Instagram", and we'll help you complete your purchase through DM.
           </p>
         </div>

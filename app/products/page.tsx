@@ -78,8 +78,8 @@ export default function ProductsPage() {
     <main className="min-h-screen bg-[#F8F4ED] px-6 py-5 md:py-10">
       <div className="mx-auto max-w-7xl">
 
-        <div className="md:mt-8 mt-4 md:mb-15 mb-5 flex flex-wrap gap-3 justify-between grid grid-cols-[70%_30%]" >
-          <div className=" flex flex-wrap gap-1">
+        <div className="mt-4 md:mt-8 mb-5 md:mb-15 grid grid-cols-1 gap-3 md:grid-cols-[70%_30%]">
+          <div className=" order-2 md:order-1 flex flex-wrap gap-1">
             {categories.length > 0 && <button onClick={() => router.push("/products")}
               className={`rounded-full px-3 py-1 transition text-[12px] cursor-pointer shadow-sm hover:shadow-lg transition ${
                 !collection
@@ -103,7 +103,7 @@ export default function ProductsPage() {
               ))}
           </div>
         
-          <div className=" flex flex-wrap justify-end gap-1">
+          <div className=" order-1 md:order-2 flex flex-wrap justify-end gap-1 mb-5 md:mb-0">
             <select
               value={sort || ""}
               onChange={(e) => {
