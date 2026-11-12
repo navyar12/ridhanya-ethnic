@@ -9,7 +9,7 @@ export default function BrowserBackButton() {
   return (
     <button
       onClick={() => router.back()}
-      className=" flex items-center gap-2 text-[#6d0c22]"
+      className=" flex items-center gap-2 text-[#6d0c22] cursor-pointer "
     >
       <ArrowLeft size={20} />
       Back

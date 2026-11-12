@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 
 import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
 import { LoaderProvider } from "./contexts/LoaderContext";
+import { Providers } from "./Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,12 +26,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body className="bg-[#F8F4ED]">
-        <LoaderProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </LoaderProvider>
+      <body className={`${geistSans.variable} ${geistMono.variable} bg-[#F8F4ED] antialiased`}>
+        <Providers>
+          <LoaderProvider>
+            <Suspense fallback={null}>
+              <Navbar />
+            </Suspense>
+            <main>{children}</main>
+            <Footer />
+          </LoaderProvider>
+        </Providers>
       </body>
     </html>
   );

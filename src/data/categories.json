@@ -9,5 +9,115 @@
         "tag": "New",
         "displayOrder": 1,
         "fabricType": "Semi Mysore Crepe"
+    },
+    {
+        "active": true,
+        "title": "Banarasi Khaddi Georgette",
+        "slug": "banarasi-khaddi-georgette",
+        "category": "sarees",
+        "description": "Premium Banarasi Khaddi Georgette Sarees",
+        "image": "",
+        "tag": "New",
+        "displayOrder": 2,
+        "fabricType": "Banarasi Khaddi Georgette"
+    },
+    {
+        "active": true,
+        "title": "Ilkal",
+        "slug": "ilkal",
+        "category": "sarees",
+        "description": "Ilkal Tam Tam Checks Saree",
+        "image": "",
+        "tag": "New",
+        "displayOrder": 3,
+        "fabricType": "Ilkal"
+    },
+    {
+        "active": true,
+        "title": "Fancy",
+        "slug": "fancy",
+        "category": "sarees",
+        "description": "Fancy Sarees",
+        "image": "",
+        "tag": "New",
+        "displayOrder": 4,
+        "fabricType": "Fancy"
+    },
+    {
+        "active": true,
+        "title": "Mull Cotton",
+        "slug": "mull-cotton",
+        "category": "sarees",
+        "description": "Mull Cotton Sarees",
+        "image": "",
+        "tag": "New",
+        "displayOrder": 5,
+        "fabricType": "Mull Cotton"
+    },
+    {
+        "active": true,
+        "title": "Bamboo Silk",
+        "slug": "bamboo-silk",
+        "category": "sarees",
+        "description": "Bamboo Silk Sarees",
+        "image": "",
+        "tag": "New",
+        "displayOrder": 6,
+        "fabricType": "Bamboo Silk"
+    },
+    {
+        "active": true,
+        "title": "Organza",
+        "slug": "organza",
+        "category": "sarees",
+        "description": "Organza Sarees",
+        "image": "",
+        "tag": "New",
+        "displayOrder": 7,
+        "fabricType": "Organza"
+    },
+    {
+        "active": true,
+        "title": "Mul Chanderi",
+        "slug": "mul-chanderi",
+        "category": "sarees",
+        "description": "Mul Chanderi Sarees",
+        "image": "",
+        "tag": "New",
+        "displayOrder": 8,
+        "fabricType": "Mul Chanderi"
+    },
+    {
+        "active": true,
+        "title": "Georgette Crush",
+        "slug": "georgette-crush",
+        "category": "sarees",
+        "description": "Georgette Crush Sarees",
+        "image": "",
+        "tag": "New",
+        "displayOrder": 9,
+        "fabricType": "Georgette Crush"
+    },
+    {
+        "active": true,
+        "title": "Paper Silk",
+        "slug": "paper-silk",
+        "category": "sarees",
+        "description": "Paper Silk Sarees",
+        "image": "",
+        "tag": "New",
+        "displayOrder": 10,
+        "fabricType": "Paper Silk"
+    },
+    {
+        "active": true,
+        "title": "Semi Modal",
+        "slug": "semi-modal",
+        "category": "sarees",
+        "description": "Semi Modal Sarees",
+        "image": "",
+        "tag": "New",
+        "displayOrder": 11,
+        "fabricType": "Semi Modal"
     }
 ]

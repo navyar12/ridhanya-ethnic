@@ -10,7 +10,8 @@ import ErrorMessage from "@/src/components/ui/ErrorMessage";
 
 export default function ProductsPage() {
   const params = useSearchParams();
-  const collection = params.get("category");
+  //const collection = params.get("category");
+  const collection = params.get("collection");
   const sort = params.get("sort");
 
   const router = useRouter();
@@ -25,12 +26,14 @@ export default function ProductsPage() {
     error: categoriesError,
   } = useCategories();
 
+
   const displayProducts = useMemo(() => {
     const data = collection
       ? products.filter(
-          (product) => product.collection === collection
+          (product) =>
+            product.collection?.toLowerCase() === collection.toLowerCase()
         )
-      : [...products];
+      : products;
 
     switch (sort) {
       case "priceAsc":
@@ -75,10 +78,10 @@ export default function ProductsPage() {
     <main className="min-h-screen bg-[#F8F4ED] px-6 py-5 md:py-10">
       <div className="mx-auto max-w-7xl">
 
-        <div className="md:mt-8 mt-4 md:mb-15 mb-5 flex flex-wrap gap-3 justify-between">
-          <div className=" flex flex-wrap gap-1 justify-between">
+        <div className="md:mt-8 mt-4 md:mb-15 mb-5 flex flex-wrap gap-3 justify-between grid grid-cols-[70%_30%]" >
+          <div className=" flex flex-wrap gap-1">
             {categories.length > 0 && <button onClick={() => router.push("/products")}
-              className={`rounded-full px-4 py-2 transition text-[12px] ${
+              className={`rounded-full px-3 py-1 transition text-[12px] cursor-pointer shadow-sm hover:shadow-lg transition ${
                 !collection
                   ? "bg-[#6d0c22] text-white"
                   : "border border-[#D8B16D] bg-white text-[#6d0c22]"
@@ -89,7 +92,7 @@ export default function ProductsPage() {
                   onClick={() =>
                     router.push(`/products?collection=${fabric.slug}`)
                   }
-                  className={`rounded-full px-4 py-2 transition text-[12px] ${
+                  className={`rounded-full px-3 py-1 transition text-[12px] cursor-pointer shadow-sm hover:shadow-lg transition  ${
                     collection === fabric.slug
                       ? "bg-[#6d0c22] text-white"
                       : "border border-[#D8B16D] bg-white text-[#6d0c22]"
@@ -100,7 +103,7 @@ export default function ProductsPage() {
               ))}
           </div>
         
-          <div>
+          <div className=" flex flex-wrap justify-end gap-1">
             <select
               value={sort || ""}
               onChange={(e) => {
@@ -114,7 +117,7 @@ export default function ProductsPage() {
 
                 router.push(`/products?${newParams.toString()}`);
               }}
-              className="rounded-lg border border-[#D8B16D] bg-white p-2 text-[#6d0c22] text-[12px]"
+              className="rounded-lg border border-[#D8B16D] bg-white p-2 text-[#6d0c22] text-[12px] h-8"
             >
               <option value="">Sort By</option>
               <option value="priceAsc">Price: Low to High</option>

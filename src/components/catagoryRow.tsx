@@ -13,7 +13,7 @@ export default function CategoryRow() {
   }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
       {categories.map((item) =>
         item.active && (
           <div
@@ -22,7 +22,7 @@ export default function CategoryRow() {
           >
             <div className="py-1 md:py-4 text-center">
               <Link href={`/products?collection=${item.slug}`}>
-                <h3 className="text-md md:text-2xl font-serif text-[#2D1B1B]">
+                <h3 className="text-md font-serif text-[#2D1B1B]">
                   {item.title}
                 </h3>
               </Link>

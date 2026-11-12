@@ -1,11 +1,12 @@
 
 import HeroCarousel from "@/src/components/HeroCarousel";
-import CategoryRow from "@/src/components/catagoryRow";
+import CategoryRow from "@/src/components/CatagoryRow";
 
 export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#FFFFFF] ">
+      
 
       <div className="relative overflow-hidden bg-[#F8F4EE] md:mt-15 mx-auto max-w-6xl md:rounded-xl">
         {/* Content */}

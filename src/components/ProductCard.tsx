@@ -28,18 +28,24 @@ export default function ProductCard({
         )}
       </p>
 
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-[#5B0D22]">
+      <div className="p-4 h-40 relative">
+        <h3 className="text-md font-semibold text-[#000] line-clamp-2">
           {product.name}
         </h3>
 
-        <p className="mt-2 text-md font-bold text-[#5B0D22]">
-          ₹{product.price}
-        </p>
+        <div className="flex items-center gap-2 mt-2">
+          <span className="text-md font-semibold text-[#5B0D22]">
+            {`Rs.${product.sellingPrice.toFixed(2)}`}
+          </span>
+          <span className="text-sm text-[#5B0D22] line-through">
+            {`Rs.${product.actualPrice.toFixed(2)}`}
+          </span>
+        </div>
 
         <Link
           href={`/products/${product.id}?color=${product.variants[0]?.color}`}
-          className="mt-4 block rounded-full border border-[#B08A4A] py-2 text-center text-[#5B0D22] transition hover:bg-[#5B0D22] hover:text-white"
+          className="mt-4 block rounded-full border border-[#B08A4A] py-1 text-[14px] text-center text-[#5B0D22] transition hover:bg-[#5B0D22] hover:text-white
+          absolute bottom-5 m-auto left-5 right-5"
         >
           View Details
         </Link>

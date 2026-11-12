@@ -4,6 +4,7 @@ import {useState} from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import Searchbar from './Searchbar';
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -15,44 +16,59 @@ const navLinks = [
 export default function Navbar() {
 
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     
     <header className="sticky top-0 z-50 bg-[#F8F4ED] shadow-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1 md:justify-start">
-        {/* Logo */}
-        <Link href="/" className="flex items-center px-0 py-1 md:px-6">
-          <Image
-            src="https://res.cloudinary.com/wogf5ux1/image/upload/v1793110933/logo-r.png"
-            alt="Ridhanya Logo"
-            width={100}
-            height={100}
-          />
-        </Link>
+      <div className="mx-auto col flex max-w-7xl items-center justify-between px-6 py-1 pl-4">
+        
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 px-5 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[16px] text-[#5B0D22] transition hover:text-[#C49A4A]"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        {/* Search Bar*/}
+        <div className="flex">
+          <div className="flex max-w-7xl justify-end px-0 md:px-6 py-1 md:justify-end">
+            <Searchbar setSearchOpen={setSearchOpen}/>
+          </div>
+        </div>
 
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          className="text-[#5B0D22] md:hidden"
-          onClick={() => setOpen((o) => !o)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-        >
-          {open ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="flex ">
+          {/* Logo */}
+          <Link href="/" className="flex items-center px-0 py-1 md:px-6">
+            <Image
+              src="https://res.cloudinary.com/wogf5ux1/image/upload/v1793110933/logo-r.png"
+              alt="Ridhanya Logo"
+              width={100}
+              height={100}
+            />
+          </Link>
+        </div>
+
+        <div>
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center gap-8 px-5 md:flex">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[16px] text-[#5B0D22] transition hover:text-[#C49A4A]"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            className="text-[#5B0D22] md:hidden"
+            onClick={() => setOpen((o) => !o)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+          >
+            {open ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+        
       </div>
 
       {/* Mobile Navigation */}
@@ -81,6 +97,15 @@ export default function Navbar() {
           </div>
         </nav>
       )}
+
+      {/* Mobile Search */}
+      {searchOpen && (
+        <Searchbar
+          setSearchOpen={setSearchOpen}
+          mobileMode
+        />
+      )}
+
     </header>
   );
 }
