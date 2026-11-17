@@ -13,6 +13,7 @@ import { Search } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/src/hooks/useRedux";
 import { RootState } from "@/src/store/store";
 import { closeSearch, openSearch } from "../store/searchSlice";
+import { PRODUCT_PLACEHOLDER } from "../constants/images";
 
 interface SearchbarProps {
   setSearchOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -87,11 +88,11 @@ export default function Searchbar({
             onChange={(e) => setSearch(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             placeholder="Search by name or code..."
-            className="flex-1 outline-none placeholder:text-[#da3036]"
+            className="flex-1 outline-none placeholder:text-[#6a7282]"
             />
         </div>
 
-        <div className="mt-4">
+        <div className="mt-4 fixed top-10 bottom-10 left-5 right-5 overflow-y-auto">
             {results.map((product) => (
             <Link
                 key={product.id}
@@ -103,17 +104,25 @@ export default function Searchbar({
                 className="flex gap-3 border-b p-3"
             >
                 <Image
-                src={product.variants[0]?.images?.[0]}
+                src={product.variants[0]?.images?.[0] || PRODUCT_PLACEHOLDER}
                 width={50}
                 height={70}
                 alt={product.name}
                 />
 
                 <div>
-                <p>{product.name}</p>
+                <p className="text-[#000000] line-clamp-2">{product.name}</p>
                 <p className="text-sm text-gray-500">
                     {product.productCode}
                 </p>
+                <div className="flex items-center gap-2 mt-2">
+                  <span className="text-md font-semibold text-[#5B0D22]">
+                    {`Rs.${product.sellingPrice.toFixed(2)}`}
+                  </span>
+                  <span className="text-sm text-[#5B0D22] line-through">
+                    {`Rs.${product.actualPrice.toFixed(2)}`}
+                  </span>
+                </div>
                 </div>
             </Link>
             ))}
@@ -169,7 +178,7 @@ export default function Searchbar({
         
         <div className="mx-auto">
         {isSearchOpen && results.length > 0 && search.trim() && (
-            <div className="absolute z-50 mt-2 w-100 rounded-lg bg-white shadow-lg">
+            <div className="absolute z-50 mt-2 w-100 max-h-[400px] overflow-y-auto rounded-lg bg-white shadow-lg">
             {results.slice(0, 5).map((product) => (
                 <Link
                 key={product.id}
@@ -181,7 +190,7 @@ export default function Searchbar({
                 className="flex items-center gap-3 p-3 hover:bg-gray-50"
                 >
                 <Image
-                    src={product.variants[0]?.images?.[0]}
+                    src={product.variants[0]?.images?.[0] || PRODUCT_PLACEHOLDER}
                     width={50}
                     height={70}
                     alt={product.name}
@@ -189,11 +198,16 @@ export default function Searchbar({
                 />
 
                 <div>
-                    <p className="font-medium">{product.name}</p>
-                    <p className="font-medium">{product.productCode}</p>
-                    <p className="text-sm text-gray-500">
-                    ₹{product.price}
-                    </p>
+                    <p className="font-medium line-clamp-2">{product.name}</p>
+                    <p className="font-medium text-[#6a7282]">{product.productCode}</p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-md font-semibold text-[#5B0D22]">
+                        {`Rs.${product.sellingPrice.toFixed(2)}`}
+                      </span>
+                      <span className="text-sm text-[#5B0D22] line-through">
+                        {`Rs.${product.actualPrice.toFixed(2)}`}
+                      </span>
+                    </div>
                 </div>
                 </Link>
             ))}
