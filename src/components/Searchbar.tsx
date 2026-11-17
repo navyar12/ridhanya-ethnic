@@ -143,7 +143,7 @@ export default function Searchbar({
 
         <button
             onClick={() => setSearchOpen(true)}
-            className="md:hidden rounded-full p-2 "
+            className="md:hidden rounded-full p-2 text-red"
             >
             <Search size={24} />
             

@@ -222,7 +222,7 @@ export default function ProductDetailsPage() {
 
         </div>
 
-        <section className="mt-12">
+        <section className="mt-12 overflow-auto">
           {recentlyViewed.length > 0 && <h2 className="text-xl font-semibold mb-4 text-[#000000]">
             Recently Viewed
           </h2>}

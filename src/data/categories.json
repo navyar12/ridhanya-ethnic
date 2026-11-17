@@ -111,13 +111,13 @@
     },
     {
         "active": true,
-        "title": "Semi Modal",
-        "slug": "semi-modal",
+        "title": "Semi Modal Crepe",
+        "slug": "semi-modal-crepe",
         "category": "sarees",
-        "description": "Semi Modal Sarees",
+        "description": "Semi Modal Crepe Sarees",
         "image": "",
         "tag": "New",
         "displayOrder": 11,
-        "fabricType": "Semi Modal"
+        "fabricType": "Semi Modal Crepe"
     }
 ]

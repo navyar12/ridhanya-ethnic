@@ -2,6 +2,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Product } from "@/src/types/product";
 import Link from "next/link";
 import Image from "next/image";
+import { PRODUCT_PLACEHOLDER } from "@/src/constants/images";
 
 interface EmblaCarouselProps {
   recentlyViewed: Product[];
@@ -29,32 +30,32 @@ return(
               key={item.slug}
               className="min-w-[220px] md:min-w-[300px] md:max-w-[300px] mr-4 p-3 overflow-hidden rounded-2xl border border-[#E7D8BF] bg-white shadow-sm transition hover:shadow-lg"
             >
-            <Link
-              href={`/products/${item.slug}`}
-              className="flex flex-col items-center"
-            >
-              <Image
-                src={item.variants[0].images[0]}
-                alt={item.name}
-                width={220}
-                height={300}
-                className="rounded-lg"
-              />
+            <div className="flex flex-col items-center">
+             
+                <Image
+                  src={item.variants[0].images[0] || PRODUCT_PLACEHOLDER}
+                  alt={item.name}
+                  width={220}
+                  height={300}
+                  className="rounded-lg"
+                />
 
-              <p className="mt-2 text-sm line-clamp-2 text-center text-[#000000]">
-                {item.name}
-              </p>
-
-              <div className="mt-2 text-center">
-                <p className="text-md font-semibold text-[#5B0D22]">
-                  {`Rs.${item.sellingPrice.toFixed(2)}`}
+              <Link href={`/products/${item.slug}`} >
+                <p className="mt-2 text-sm line-clamp-2 text-center text-[#000000] hover:underline">
+                  {item.name}
                 </p>
+                </Link>
+                <div className="mt-2 text-center">
+                  <p className="text-md font-semibold text-[#5B0D22]">
+                    {`Rs.${item.sellingPrice.toFixed(2)}`}
+                  </p>
 
-                <p className="text-sm text-[#5B0D22] line-through">
-                  {`Rs.${item.actualPrice.toFixed(2)}`}
-                </p>
+                  <p className="text-sm text-[#5B0D22] line-through">
+                    {`Rs.${item.actualPrice.toFixed(2)}`}
+                  </p>
+                </div>
+              
               </div>
-            </Link>
             </div>
           ))}
       </div>

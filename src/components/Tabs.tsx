@@ -18,6 +18,8 @@ const tabs = ["Description", "Wash Care", "Shipping & Returns"];
 
 const [activeTab, setActiveTab] = useState("Description");
 
+const descriptionList = product.description.match(/<p>(.*?)<\/p>/g) || [];
+
 return (
   <div className="mt-8">
     {/* Tab Headers */}
@@ -42,7 +44,11 @@ return (
       {activeTab === "Description" && (
         <div className="prose max-w-none">
            <ul className="mt-2 space-y-2 text-gray-700">
-              <li>{`✓ ${product.description}`}</li>
+              {descriptionList.map((p, i) => (
+                <li key={i}>
+                  ✓ {p.replace(/<\/?p>/g, "")}
+                </li>
+              ))}
               <li>{`✓ ${product.blouse}`}</li>
             </ul>
         </div>

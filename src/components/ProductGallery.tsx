@@ -38,7 +38,7 @@ export default function ProductGallery({
       {/* Main Image */}
       <div className="overflow-hidden rounded-2xl border border-[#E7D8BF]">
         <Image
-          src={selectedImage}
+          src={selectedImage || PRODUCT_PLACEHOLDER}
           alt="Saree"
           width={800}
           height={1200}
@@ -55,7 +55,7 @@ export default function ProductGallery({
         <div className="flex gap-2">
           {selectedVariant.images?.map((image, index) => (
             <button
-              key={image}
+              key={index+'_'+image}
               onClick={() => setSelectedImage(image)}
               className={`overflow-hidden rounded-lg border-2 cursor-pointer ${
                 selectedImage === image
@@ -64,7 +64,7 @@ export default function ProductGallery({
               }`}
             >
               <Image
-                src={image}
+                src={image || PRODUCT_PLACEHOLDER}
                 alt={`${selectedVariant.color}-${index}`}
                 width={60}
                 height={90}
