@@ -35,10 +35,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center px-0 py-1 md:px-6">
             <Image
-              src="https://res.cloudinary.com/wogf5ux1/image/upload/v1793110933/logo-r.png"
+              src="https://res.cloudinary.com/wogf5ux1/image/upload/v1795064008/Logo-final.webp"
               alt="Ridhanya Logo"
-              width={100}
-              height={100}
+              width={120}
+              height={120}
+              className='rounded-full' 
             />
           </Link>
         </div>

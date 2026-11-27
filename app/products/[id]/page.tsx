@@ -17,6 +17,7 @@ import Breadcrumbs from "@/src/components/Breadcrumbs";
 import {useRecentlyViewed} from "@/src/hooks/useRecentlyViewed";
 import { Product } from "@/src/types/product";
 import EmblaCarousel from "@/src/components/EmblaCarousel";
+import PageLoader from "@/src/components/PageLoader";
 
 export default function ProductDetailsPage() {
   const params = useParams<{ id: string }>();
@@ -96,10 +97,10 @@ export default function ProductDetailsPage() {
 
   }, [product]);
 
-
   if (!product) {
-    return <div className="p-10">Product not found</div>;
+    return <PageLoader />;
   }
+  
 
   return (
     <main className="min-h-screen bg-[#F8F4ED] px-6 py-10 ">
@@ -109,7 +110,7 @@ export default function ProductDetailsPage() {
             { label: "Home", href: "/" },
             { label: "Sarees", href: "/products" },
             {
-              label: product.collection,
+              label: product.fabric,
               href: `/products?collection=${product.collection}`
             },
             {

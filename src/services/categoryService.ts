@@ -8,10 +8,16 @@ export const getCategories = async (): Promise<Category[]> => {
     where("active", "==", true)
   );
 
-  const snapshot = await getDocs(q);
+  try {
+    const snapshot = await getDocs(q);
 
-  return snapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...(doc.data() as Omit<Category, "id">),
-  }));
+    return snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...(doc.data() as Omit<Category, "id">),
+    })); 
+
+  } catch (error) {
+    console.error("Firestore fetch failed:", error);
+    throw error;
+  }
 };

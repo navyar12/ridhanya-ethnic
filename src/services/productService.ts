@@ -15,12 +15,18 @@ export const getProducts = async (): Promise<Product[]> => {
     where("active", "==", true)
   );
 
-  const snapshot = await getDocs(q);
+  try {
+    const snapshot = await getDocs(q);
 
-  return snapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...(doc.data() as Omit<Product, "id">),
-  }));
+    return snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...(doc.data() as Omit<Product, "id">),
+    })); 
+
+  } catch (error) {
+    console.error("Firestore fetch failed:", error);
+    throw error;
+  }
 };
 
 export const getProductById = async (

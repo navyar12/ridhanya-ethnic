@@ -13,12 +13,18 @@ export const getBanners = async (): Promise<Banner[]> => {
     where("active", "==", true)
   );
 
-  const snapshot = await getDocs(q);
+  try {
+    const snapshot = await getDocs(q);
 
-  return snapshot.docs
-    .map((doc) => ({
-      id: doc.id,
-      ...(doc.data() as Omit<Banner, "id">),
-    }))
-    .sort((a, b) => a.displayOrder - b.displayOrder);
+    return snapshot.docs
+      .map((doc) => ({
+        id: doc.id,
+        ...(doc.data() as Omit<Banner, "id">),
+      }))
+      .sort((a, b) => a.displayOrder - b.displayOrder);
+
+  } catch (error) {
+    console.error("Firestore fetch failed:", error);
+    throw error;
+  }
 };
